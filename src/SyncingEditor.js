@@ -16,7 +16,7 @@ const SyncingEditor = (props) => {
     emitter.on('*', (type, ops) => {
       if (id.current === type) {
         remote.current = true
-        ops.forEach(op => editor.current.applyOperations(op))
+        ops.forEach(op => editor.current.applyOperation(op))
         remote.current = false
       }
     })
